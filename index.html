@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plagiarism Checker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img src="assets/Icon.svg" alt="logo" width="40" />
+        Writerwise
+      </div>
+    </nav>
+    <div class="intro">Introducing Writerwise</div>
+    <!-- <div class="btns">
+      <button class="btnsrt">Try Writerwise</button>
+      <a class="btnslern" href="#">Learn about Writerwise</a>
+    </div> -->
+
+    <div class="heading">Plagiarism Checker by Writerwise</div>
+    <div class="heading-sub">
+      Writerwise ensures the originality of your work with its advanced
+      plagiarism checker, identifying any duplicate content in your text. It
+      also offers insights on grammar, style, and structure to help you refine
+      your writing effortlessly.
+    </div>
+
+    <div class="box">
+      <div class="box1">
+        <div class="text-area-section">
+          <textarea
+            id="inputdata"
+            placeholder="Enter text or upload file to check for plagiarism and writing errors."
+            oninput="updateWordCount()"
+          ></textarea>
+          <div class="button-container">
+            <div>
+              <button class="scan-button" onclick="scanText()">
+                Scan for plagiarism
+              </button>
+              <label for="file-upload" class="upload-button"
+                >Upload a file</label
+              >
+              <input
+                type="file"
+                id="file-upload"
+                onchange="handleFileUpload()"
+              />
+            </div>
+            <div class="word-count"><span id="wordCount">0</span> / 10000</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="info-section">
+          <h3>
+            <img src="assets/Icon.svg" alt="logo" class="logos" /> Let's get
+            started.
+          </h3>
+          <ol>
+            <li>Add your text or upload a file.</li>
+            <li>Click to scan for plagiarism.</li>
+            <li>
+              Review the results for instances of potential plagiarism, plus
+              additional writing issues.
+            </li>
+          </ol>
+          <button class="get-grammarly">Get Writerwise Pro</button>
+          <div class="login-link">
+            Already have an account? <a href="#">Log in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="heading">Beyond Plagiarism Detection: Speed Up Your Work</div>
+    <div class="heading-sub">
+      Writerwise enhances your writing with an advanced plagiarism checker that
+      ensures originality and identifies duplicate content. It also offers
+      valuable feedback on grammar, style, and structure, making it easy to
+      refine your work and elevate your writing effortlessly.
+    </div>
+
+    <div class="heading">Frequently Asked Questions</div>
+    <div class="body-drop">
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            What is plagiarism?
+          </button>
+          <div class="faq-answer">
+            <p>
+              While writing your paper, you notice a familiar line. Did you read
+              it somewhere? If you borrowed a few lines and didn’t cite them,
+              does that count as plagiarism, even if they’re just a small part?
+            </p>
+            <p>
+              "Using someone else’s text without attribution is plagiarism,
+              intentional or not. Unintentional plagiarism, even if it's just a
+              sentence, can lead to serious consequences like failing grades.
+              Fortunately, you can ensure your work's authenticity with
+              Writerwise. This plagiarism checker helps you identify any
+              unintentional use of others' words or ideas, protecting you from
+              academic repercussions."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            What are the different types of plagiarism?
+          </button>
+          <div class="faq-answer">
+            <p>
+              1. Direct Plagiarism: This involves copying someone else's work
+              word-for-word without any citation. It's considered the most
+              blatant form of plagiarism and can lead to severe penalties.
+            </p>
+            <p>
+              2. Self-Plagiarism: This occurs when an author reuses their own
+              previously submitted work in a new context without permission or
+              proper citation. It misleads readers into thinking the work is
+              original.
+            </p>
+            <p>
+              3. Mosaic Plagiarism: This type involves mixing phrases or ideas
+              from different sources into a new piece without proper
+              attribution. Even if the wording is changed, the original sources
+              must still be credited.
+            </p>
+            <p>
+              4. Paraphrasing Plagiarism: This occurs when someone rewrites
+              someone else's ideas in their own words but fails to cite the
+              original source. While the wording may differ, the underlying
+              concept is still borrowed.
+            </p>
+            <p>
+              5. Accidental Plagiarism: This type happens when a writer
+              unintentionally fails to cite sources or misquotes, leading to the
+              unintentional use of another's work. Despite the lack of intent,
+              it still violates academic integrity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            How can I avoid plagiarism in my written work?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Understanding the different forms of plagiarism is crucial to
+              preventing them. To avoid plagiarism:
+            </p>
+            <p>
+              1. Always provide proper citations for any ideas, quotes, or
+              information taken from other sources.
+            </p>
+            <p>
+              2. Utilize plagiarism detection tools like Writerwise to check for
+              unintentional plagiarism before submitting your work.
+            </p>
+            <p>
+              3. Paraphrase correctly: when restating someone else's ideas, do
+              so in your own words and always cite the original source.
+            </p>
+            <p>
+              4. Keep track of your sources and maintain a bibliography or works
+              cited page.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            What is the difference between plagiarism and copyright
+            infringement?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Plagiarism involves using someone else’s work or ideas without
+              attribution, regardless of whether the content is protected by
+              copyright. It is primarily an ethical concern, often leading to
+              academic consequences.
+            </p>
+            <p>
+              Copyright infringement, however, is a legal issue that occurs when
+              copyrighted material is used without permission from the copyright
+              holder. Unlike plagiarism, copyright infringement can result in
+              legal action.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
